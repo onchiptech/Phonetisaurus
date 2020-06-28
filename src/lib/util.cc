@@ -154,13 +154,15 @@ timespec diff(timespec start, timespec end){
   return temp;
 }
 
-DEFINE_bool   (help, false, "show usage information");
+//DEFINE_bool   (help, false, "show usage information");
 void PhonetisaurusSetFlags (const char* usage, int* argc, char*** argv,
 			    bool remove_flags) {
   //Workaround for Apple's. It just skips all the options processing. 
 #if defined(__APPLE__) && defined(__MACH__)
   SetFlags (usage, argc, argv, remove_flags);
 #else
+  cout << "  show usage information" << endl;
+  /*
   int index = 1;
   for (; index < *argc; ++index) {
     string argval = (*argv)[index];
@@ -244,8 +246,10 @@ void PhonetisaurusSetFlags (const char* usage, int* argc, char*** argv,
     cout << "  show usage information" << endl;
     exit (0);
   }
+  */  
 #endif
 }
+
 
 void LoadWordList (const std::string& filename,
                   std::vector<std::string>* corpus) {
