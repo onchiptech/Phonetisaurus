@@ -161,8 +161,6 @@ void PhonetisaurusSetFlags (const char* usage, int* argc, char*** argv,
 #if defined(__APPLE__) && defined(__MACH__)
   SetFlags (usage, argc, argv, remove_flags);
 #else
-  cout << "  show usage information" << endl;
-  /*
   int index = 1;
   for (; index < *argc; ++index) {
     string argval = (*argv)[index];
@@ -206,7 +204,7 @@ void PhonetisaurusSetFlags (const char* usage, int* argc, char*** argv,
     
     LOG(FATAL) << "SetFlags: Bad option: " << (*argv)[index];
   }
-  
+  /*
   if (FLAGS_help) {
     //Just show program flags - NOT general OpenFst flags
     // There are too many and they are just confusing.
@@ -241,12 +239,13 @@ void PhonetisaurusSetFlags (const char* usage, int* argc, char*** argv,
       //Else print out the args - they are from the actual program
       cout << usage << endl;
     }
+    */
     //Fake this
     cout << "  --help: type = bool, default = false" << endl;
     cout << "  show usage information" << endl;
     exit (0);
   }
-  */  
+  
 #endif
 }
 
